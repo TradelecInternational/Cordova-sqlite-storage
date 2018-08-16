@@ -148,7 +148,7 @@ To check the data using the DRAFT standard transaction API:
 
 ### Using plugin-specific API calls
 
-NOTE: These samples will NOT work alternative 3 for browser platform support discussed in [browser platform usage notes](#browser-platform-usage-notes).
+NOTE: These samples will **not** work with alternative 3 for browser platform support discussed in [browser platform usage notes](#browser-platform-usage-notes).
 
 To populate a database using the SQL batch API:
 
@@ -604,7 +604,7 @@ Some additional issues are tracked in [open Cordova-sqlite-storage bug-general i
 - Case-insensitive matching and other string manipulations on Unicode characters, which is provided by optional ICU integration in the sqlite source and working with recent versions of Android, is not supported for any target platforms.
 - The iOS/macOS platform version uses a thread pool but with only one thread working at a time due to "synchronized" database access.
 - Some large query results may be slow, also due to the JSON implementation.
-- ATTACH to another database file is not supported by this version branch. Attach/detach is supported (along with the memory and iOS UNICODE `\u2028` line separator / `\u2029` paragraph separator fixes) in [litehelpers / Cordova-sqlite-evplus-legacy-attach-detach-free](https://github.com/litehelpers/Cordova-sqlite-evplus-legacy-attach-detach-free) (GPL or special commercial license terms).
+- ATTACH to another database file is not supported by this version branch. Attach/detach is supported for Android/iOS/macOS (along with the memory and iOS UNICODE `\u2028` line separator / `\u2029` paragraph separator fixes) in [litehelpers / Cordova-sqlite-evplus-legacy-attach-detach-free](https://github.com/litehelpers/Cordova-sqlite-evplus-legacy-attach-detach-free) (GPL or special commercial license terms).
 - UPDATE/DELETE with LIMIT or ORDER BY is not supported.
 - WITH clause is not supported on some older Android platform versions in case the `androidDatabaseImplementation: 2` (built-in android.database implementation) option is used.
 - User-defined savepoints are not supported and not expected to be compatible with the transaction locking mechanism used by this plugin. In addition, the use of BEGIN/COMMIT/ROLLBACK statements is not supported.
@@ -985,7 +985,7 @@ The following types of SQL transactions are supported by this plugin version:
 
 ### Single-statement transactions
 
-NOTE: This call will NOT work alternative 3 for browser platform support discussed in [browser platform usage notes](#browser-platform-usage-notes).
+NOTE: This call will **not** work with alternative 3 for browser platform support discussed in [browser platform usage notes](#browser-platform-usage-notes).
 
 Sample with INSERT:
 
@@ -1034,7 +1034,7 @@ db.executeSql("SELECT UPPER('First') AS uppertext", [], function (resultSet) {
 
 ### SQL batch transactions
 
-NOTE: This call will NOT work alternative 3 for browser platform support discussed in [browser platform usage notes](#browser-platform-usage-notes).
+NOTE: This call will **not** work with alternative 3 for browser platform support discussed in [browser platform usage notes](#browser-platform-usage-notes).
 
 Sample:
 
