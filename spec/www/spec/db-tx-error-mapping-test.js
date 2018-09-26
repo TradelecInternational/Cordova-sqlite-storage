@@ -244,8 +244,8 @@ var mytests = function() {
               expect(error.message).toMatch(/callback raised an exception.*or.*error callback did not return false/);
             else if (isWindows)
               expect(error.message).toMatch(/error callback did not return false.*Error preparing an SQLite statement/);
-            //* else //* XXX TBD
-            //*   expect(error.message).toMatch(/error callback did not return false.*syntax error/);
+            else
+              expect(error.message).toMatch(/error callback did not return false.*XXX/); // XXX ___
 
             isWebSql ? done() : db.close(done, done);
           }, function() {
